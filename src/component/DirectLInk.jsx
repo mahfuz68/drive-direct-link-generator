@@ -83,6 +83,7 @@ export default function DirectLInk() {
             className="active:outline-none focus:outline-none p-2.5 text-sm"
             type="text"
             value={outputLink}
+            disabled={true}
           />
 
           <button type="button" onClick={copyText}>
