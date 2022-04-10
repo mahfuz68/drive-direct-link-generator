@@ -52,7 +52,7 @@ export default function DirectLInk() {
           Must be use google file not folder and shareable link like:
         </h3>
         <h4 className="text-sm text-indigo-800 hidden sm:block">
-          https://drive.google.com/file/d/1kazyfB4JHoZSmczN-FBVXB4C8qN5b46G/view?usp=sharing
+          https://drive.google.com/file/d/1StjzLcUB5NjjL4nnh82zyENSeE1O7aW-/view?usp=sharing
         </h4>
         <div className="flex justify-center gap-4">
           <input
