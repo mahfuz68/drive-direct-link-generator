@@ -41,13 +41,17 @@ export default function DirectLInk() {
   };
 
   return (
-    <div className="flex justify-center pt-20">
+    <div className="flex justify-center pt-20 ">
       <div>
         <h1 className="text-center text-2xl">Input Your File Drive Link</h1>
-        <h3 className="text-center text-sm text-indigo-500 mt-2">
+        <h3 className="text-center text-sm text-rose-600 mt-2 sm:hidden">
+          Must be use google file not folder
+          <br /> and shareable link like:
+        </h3>
+        <h3 className="text-center text-sm text-rose-600 mt-2 hidden sm:block">
           Must be use google file not folder and shareable link like:
         </h3>
-        <h4 className="text-sm text-indigo-800">
+        <h4 className="text-sm text-indigo-800 hidden sm:block">
           https://drive.google.com/file/d/1kazyfB4JHoZSmczN-FBVXB4C8qN5b46G/view?usp=sharing
         </h4>
         <div className="flex justify-center gap-4">
@@ -114,7 +118,7 @@ export default function DirectLInk() {
           </button>
         </div>
         <button
-          className="mt-4 px-2 py-1 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+          className="sm:mx-36 mt-4 px-2 py-1 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
           type="button"
           onClick={clearAllState}
         >
