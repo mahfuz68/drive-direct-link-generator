@@ -44,6 +44,12 @@ export default function DirectLInk() {
     <div className="flex justify-center pt-20">
       <div>
         <h1 className="text-center text-2xl">Input Your File Drive Link</h1>
+        <h3 className="text-center text-sm text-indigo-500 mt-2">
+          Must be use google file not folder and shareable link like:
+        </h3>
+        <h4 className="text-sm text-indigo-800">
+          https://drive.google.com/file/d/1kazyfB4JHoZSmczN-FBVXB4C8qN5b46G/view?usp=sharing
+        </h4>
         <div className="flex justify-center gap-4">
           <input
             className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mt-4 dark:focus:ring-blue-500 dark:focus:border-blue-500"
