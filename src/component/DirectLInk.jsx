@@ -41,7 +41,7 @@ export default function DirectLInk() {
   };
 
   return (
-    <div className="flex justify-center pt-20 ">
+    <div className="flex justify-center pt-20">
       <div>
         <h1 className="text-center text-2xl">Input Your File Drive Link</h1>
         <h3 className="text-center text-sm text-rose-600 mt-2 sm:hidden">
@@ -96,7 +96,7 @@ export default function DirectLInk() {
             disabled={true}
           />
 
-          <button type="button" onClick={copyText}>
+          <button type="button" className="" onClick={copyText}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={
@@ -118,7 +118,11 @@ export default function DirectLInk() {
           </button>
         </div>
         <button
-          className="sm:mx-36 mt-4 px-2 py-1 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+          className={
+            outputLink !== ""
+              ? "sm:mx-36 mt-4 px-2 py-1 border border-transparent shadow-sm text-base font-medium rounded-md  text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
+              : "hidden"
+          }
           type="button"
           onClick={clearAllState}
         >
