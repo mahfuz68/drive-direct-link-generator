@@ -1,7 +1,7 @@
 import DirectLInk from "./component/DirectLInk";
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen">
       <DirectLInk />
     </div>
   );

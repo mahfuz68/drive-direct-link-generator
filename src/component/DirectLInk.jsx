@@ -41,22 +41,22 @@ export default function DirectLInk() {
   };
 
   return (
-    <div className="flex justify-center pt-20">
+    <div className="h-full bg-gray-900 text-white flex justify-center pt-20">
       <div>
         <h1 className="text-center text-2xl">Input Your File Drive Link</h1>
-        <h3 className="text-center text-sm text-rose-600 mt-2 sm:hidden">
+        <h3 className="text-center text-sm text-rose-300 mt-2 sm:hidden">
           Must be use google file not folder
           <br /> and shareable link like:
         </h3>
         <h3 className="text-center text-sm text-rose-600 mt-2 hidden sm:block">
           Must be use google file not folder and shareable link like:
         </h3>
-        <h4 className="text-sm text-indigo-800 hidden sm:block">
+        <h4 className="text-sm text-blue-400 hidden sm:block">
           https://drive.google.com/file/d/1StjzLcUB5NjjL4nnh82zyENSeE1O7aW-/view?usp=sharing
         </h4>
         <div className="flex justify-center gap-4">
           <input
-            className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white mt-4 dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className=" border text-sm ring-2 rounded-lg focus:outline-none  focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 border-gray-600 placeholder-white text-white mt-4 dark:focus:ring-blue-500 dark:focus:border-blue-500 bg-gray-700 "
             type="text"
             placeholder="input your drive share link"
             value={inputLink}
@@ -90,7 +90,7 @@ export default function DirectLInk() {
           }
         >
           <input
-            className="active:outline-none focus:outline-none p-2.5 text-sm"
+            className="active:outline-none focus:outline-none p-2.5 text-sm bg-gray-900"
             type="text"
             value={outputLink}
             disabled={true}
@@ -129,6 +129,7 @@ export default function DirectLInk() {
           Clear
         </button>
       </div>
+      <div className="h-screen"></div>
     </div>
   );
 }
