@@ -20,7 +20,7 @@ export default function DirectLInk() {
   useEffect(() => {
     const directLink = () => {
       const fileID = inputLink.split("/")[5];
-      const api = "AIzaSyA_CwzBxLIpBMvVwZ-39rzzfI5feWZ-O8w";
+      const api = "AIzaSyDVyzmm9lL3IE08vAxwio2ubLr2EVf1ucA";
       const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${api}`;
       setOutputLink(outputHLink);
       return fileID;
