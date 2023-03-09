@@ -21,7 +21,7 @@ export default function DirectLInk() {
     const directLink = () => {
       const fileID = inputLink.split("/")[5];
       const api = "AIzaSyDVyzmm9lL3IE08vAxwio2ubLr2EVf1ucA";
-      const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${api}`;
+      const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${import.meta.env.VITE_API}`;
       setOutputLink(outputHLink);
       return fileID;
     };
