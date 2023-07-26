@@ -5,6 +5,7 @@ export default function DirectLInk() {
   const [outputLink, setOutputLink] = useState("");
   const [isPast, setIsPast] = useState(false);
   const [isCopy, setIsCopy] = useState(false);
+  const [error, setError] = useState("");
 
   const updateLink = (e) => {
     setInputLInk(e.target.value);
@@ -14,14 +15,25 @@ export default function DirectLInk() {
     setInputLInk("");
     setIsPast(false);
     setOutputLink("");
+    setError("");
     setIsCopy(false);
   };
 
   useEffect(() => {
     const directLink = () => {
-      const fileID = inputLink.split("/")[5];
-      const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${import.meta.env.VITE_API}`;
-      setOutputLink(outputHLink);
+      const pattern = /\/file\/d\/([a-zA-Z0-9_-]+)\//;
+      const match = inputLink.match(pattern);
+      let fileID;
+
+      if (match) {
+        fileID = match[1];
+        const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${
+          import.meta.env.VITE_API
+        }`;
+        setOutputLink(outputHLink);
+      } else {
+        setError("Invalid Google Drive URL");
+      }
       return fileID;
     };
     inputLink !== "" ? directLink() : null;
@@ -48,7 +60,7 @@ export default function DirectLInk() {
           <br /> and shareable link like:
         </h3>
         <h3 className="text-center text-sm text-rose-600 mt-2 hidden sm:block">
-          Must be use google file not folder and shareable link like:
+          Must be use google file not folder and link like:
         </h3>
         <h4 className="text-sm text-blue-400 hidden sm:block">
           https://drive.google.com/file/d/1StjzLcUB5NjjL4nnh82zyENSeE1O7aW-/view?usp=sharing
@@ -83,6 +95,11 @@ export default function DirectLInk() {
             </svg>
           </button>
         </div>
+        {error && (
+          <h3 className="text-center text-md text-rose-600 mt-2 hidden sm:block">
+            {error}
+          </h3>
+        )}
         <div
           className={
             outputLink !== "" ? "flex justify-center gap-4 mt-4" : "hidden"
@@ -118,7 +135,7 @@ export default function DirectLInk() {
         </div>
         <button
           className={
-            outputLink !== ""
+            inputLink !== ""
               ? "sm:mx-36 mt-4 px-2 py-1 border border-transparent shadow-sm text-base font-medium rounded-md  text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none"
               : "hidden"
           }
