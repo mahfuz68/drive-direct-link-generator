@@ -27,9 +27,10 @@ export default function DirectLInk() {
 
       if (match) {
         fileID = match[1];
-        const outputHLink = `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${
-          import.meta.env.VITE_API
-        }`;
+        const outputHLink = `https://drive.google.com/uc?export=download&id=${fileID}`;
+        // `https://www.googleapis.com/drive/v3/files/${fileID}?alt=media&key=${
+        //   import.meta.env.VITE_API
+        // }`;
         setOutputLink(outputHLink);
       } else {
         setError("Invalid Google Drive URL");
